@@ -5,7 +5,6 @@ const OpenaiApiKeyProperties = PropertiesService.getUserProperties();
 const LINE_ACCESS_TOKEN = LineTokenProperties.getProperty('LINE_ACCESS_TOKEN');
 const OPENAI_APIKEY = OpenaiApiKeyProperties.getProperty('OPENAI_APIKEY');
 let replyFlag = false;
-let PagerFlag = false;
 
 function doPost(e) {
   const event = JSON.parse(e.postData.contents).events[0];
@@ -16,9 +15,7 @@ function doPost(e) {
 
   // やんすorヤンスの文字列が入ってるメッセージにのみ返答する
   if(0 < userMessage.indexOf('やんす') || 0 < userMessage.indexOf('ヤンス')){
-    if(!(PagerFlag)){
     replyFlag = true;
-    }
   }
 
   if(replyFlag){
