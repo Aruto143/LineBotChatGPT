@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+      "isolatedModules": true,
+      "noLib": true,
+      "noResolve": true,
+      "target": "ES2019",
+      "lib": ["esnext"],
+      "module": "None",
+      "noImplicitUseStrict": true,
+      "experimentalDecorators": true,
+      "types": ["google-apps-script", "node"]
+  }
+}
+
+/* ChatGPTによるtsconfig.jsonの説明。 
+
+このtsconfig.jsonファイルは、TypeScriptプロジェクトのコンパイラオプションを設定するためのファイルです。それぞれのオプションについて説明します。
+
+"isolatedModules": true: 各ファイルを独立したモジュールとして扱います。これにより、各ファイルが他のファイルとの依存関係なしに、単独で型チェックできるようになります。
+
+"noLib": true: デフォルトのライブラリファイル（lib.d.ts）を含めずにコンパイルします。これは、libオプションで指定されたライブラリを使用する場合に有用です。
+
+"noResolve": true: モジュールインポートの解決をスキップします。これは、通常、TypeScriptがインポートされたモジュールの型定義ファイルを見つけるために使用されますが、このオプションで解決をスキップします。
+
+"target": "ES2019": コンパイル後のJavaScriptのバージョンをES2019に設定します。
+
+"lib": ["esnext"]: 標準の組み込みAPI定義に加えて、最新のECMAScript仕様の機能を含めます。
+
+"module": "None": モジュールシステムを使用しないことを示します。Google Apps Scriptでは、ESモジュールシステムはサポートされていません。
+
+"noImplicitUseStrict": true: 生成されたJavaScriptファイルの先頭に"use strict"を自動的に挿入しないようにします。
+
+"experimentalDecorators": true: 実験的なデコレーター機能を有効にします。デコレーターは、クラス、メソッド、アクセサー、プロパティ、またはパラメータにアノテーションや修飾を追加するための特別な種類の宣言です。
+
+"types": ["google-apps-script", "node"]: コンパイル時に含める型定義ファイルを明示的に指定します。この例では、google-apps-scriptとnodeの型定義ファイルが含まれます。
+
+この設定ファイルは、Google Apps ScriptプロジェクトでTypeScriptを使用する際の設定を反映しています。これにより、Google Apps Script環境で利用可能なAPIの型定義や、Node.jsの型定義が含まれるようになります。また、いくつかのオプションは、Google Apps Scriptがサポートしていない機能を無効化するために使用されています。例えば、Google Apps Scriptでは、モジュールシステムがサポートされていないため、"module": "None"オプションが使用されています。
+
+また、この設定ファイルは、TypeScriptプロジェクトをGoogle Apps Scriptの制約に合わせることで、プロジェクトがGoogle Apps Script環境でスムーズに動作するようにしています。特に、"isolatedModules": trueオプションを使用することで、Google Apps Script環境での型チェックが向上し、エラーが発生する可能性を軽減しています。
+
+さらに、"noLib": trueオプションを使用してデフォルトのライブラリファイルを含めずにコンパイルすることで、Google Apps Script環境で利用可能なAPIの型定義を適切に管理できます。これにより、"lib": ["esnext"]オプションを使用して、最新のECMAScript仕様の機能を含めることができます。
+
+最後に、"experimentalDecorators": trueオプションは、TypeScriptのデコレータ機能を使用することを許可します。デコレータは、Google Apps Scriptプロジェクトで使用することができますが、まだ実験的な機能であるため、このオプションを有効にすることが必要です。
+
+全体として、このtsconfig.jsonファイルは、TypeScriptプロジェクトをGoogle Apps Script環境に適応させるために適切に設定されています。これにより、Google Apps ScriptのAPIとNode.jsの型定義を含む、TypeScriptの利点を活用することができます。
+
+*/
